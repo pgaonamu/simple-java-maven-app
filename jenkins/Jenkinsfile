@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    stage('Verify Maven') {
-        steps {
-            sh 'mvn -v' // This will confirm if Maven is installed and accessible
+    stages {
+        stage('Verify Maven') {
+            steps {
+                sh 'mvn -v' // Check Maven version to confirm it's installed
             }
         }
-    stages {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
